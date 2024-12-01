@@ -71,37 +71,10 @@ int main() {
     qsort(a, count, sizeof(int), int_cmp);
     qsort(b, count, sizeof(int), int_cmp);
 
-    int result = part_2(a, b, count);
-    info("result: %d", result);
+    int p1 = part_1(a, b, count);
+    int p2 = part_2(a, b, count);
+    info("result part 1: %d", p1);
+    info("result part 2: %d", p2);
+
+    arenaCleanup(&arena);
 }
-    /*
-    arr<int> a, b;
-    
-    str s = file_read("input.txt")
-    while (view line = read_line(s)) {
-        view left, right = split(line, ' ')
-        a.push(to_num(left))
-        b.push(to_num(right))
-    }
-
-    a.sort()
-    b.sort()
-
-    int k = 0;
-    int result = 0;
-    for (int i = 0; i < count; ++i) {
-        info("> %d", a[i]);
-        int before = k;
-        for (; k < count; ++k) {
-            if (a[i] != b[k]) {
-                break;
-            }
-        }
-
-        result += a[i] * (k - before);
-        break;
-    }
-    
-    print(diff)
-    
-    */
