@@ -1,4 +1,4 @@
-#include "colla/build.c"
+#include "../colla/build.c"
 
 int int_cmp(const void *a, const void *b) {
     int left = *((const int *)a);
@@ -52,11 +52,11 @@ int part_2(int a[1000], int b[1000], int count) {
 int main() {
     arena_t arena = arenaMake(ARENA_VIRTUAL, MB(1));
     
-    int a[1000];
-    int b[1000];
+    int a[1000] = {0};
+    int b[1000] = {0};
     int count = 0;
 
-    str_t input = fileReadWholeStr(&arena, strv("input-final.txt"));
+    str_t input = fileReadWholeStr(&arena, strv("input.txt"));
     instream_t in = istrInitLen(input.buf, input.len);
 
     while (!istrIsFinished(in)) {
