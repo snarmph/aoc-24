@@ -131,8 +131,8 @@ int main() {
     int p1 = part_1(in);
     int p2 = part_2(in);
 
-    info("part 1: %d", p1);
-    info("part 2: %d", p2);
+    info("result part 1: %d", p1);
+    info("result part 2: %d", p2);
 
     arenaCleanup(&arena);
 }
