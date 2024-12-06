@@ -103,7 +103,6 @@ int part_2(input_t *in) {
                 bool valid_num = true;
                 for (int check = cur + 1; check < line->len; ++check) {
                     if (!in->dep[line->v[check]][line->v[cur]]) {
-                        // warn("failed: %d|%d", line->v[cur], line->v[check]);
                         int t = line->v[check];
                         line->v[check] = line->v[cur];
                         line->v[cur] = t;
@@ -135,4 +134,6 @@ int main() {
 
     info("result part 1: %d", p1);
     info("result part 2: %d", p2);
+    
+    arenaCleanup(&arena);
 }
